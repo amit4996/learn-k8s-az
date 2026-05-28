@@ -281,6 +281,8 @@ They solve different problems. But for packaging and running applications quickl
 | `docker pull nginx` | Downloads nginx image | Get the meal kit |
 | `docker images` | Lists images | Show me my meal kits |
 | `docker run nginx` | Runs nginx container | Cook the thing |
+| `docker run -p 8080:80 nginx` | Runs nginx container on port 80 inside container and binds it to 8080 on host machine | Cook the thing |
+| `docker run -d -p 8080:80 nginx` | Runs nginx container on port 80 inside container and binds it to 8080 on host machine (in detached mode) | Cook the thing |
 | `docker ps` | Lists running containers | Who is alive right now? |
 | `docker ps -a` | Lists all containers | Show alive and retired containers |
 | `docker stop <container_id>` | Stops a container | Calm down, app |
