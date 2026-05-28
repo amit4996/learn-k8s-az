@@ -36,8 +36,8 @@ Sometimes the environment is the real villain.
 
 ```mermaid
 flowchart LR
-    Dev["Developer Laptop<br/>Everything works<br/>Confidence level: 100"] --> Prod["Production Server<br/>Missing dependency<br/>Confidence level: 0"]
-    Prod --> Panic["Application crashes<br/>Everyone stares at logs"]
+    Dev[Developer Laptop: everything works] --> Prod[Production Server: missing dependency]
+    Prod --> Panic[Application crashes]
     Panic --> Quote["It worked on my machine"]
 ```
 
@@ -95,11 +95,13 @@ That is Docker energy.
 
 ```mermaid
 flowchart TD
-    A["Without Docker<br/>Here is my recipe<br/>Good luck"] --> B["Server tries to cook it<br/>Missing ingredients"]
-    B --> C["Sad application noises"]
+    A[Without Docker: recipe only] --> B[Server tries to rebuild the environment]
+    B --> C[Missing ingredients]
+    C --> D[Sad application noises]
 
-    D["With Docker<br/>Here is the full lunchbox"] --> E["Server opens it"]
-    E --> F["Application runs<br/>Less chaos"]
+    E[With Docker: full lunchbox] --> F[Server opens the package]
+    F --> G[Application runs]
+    G --> H[Less chaos]
 ```
 
 ---
@@ -121,8 +123,8 @@ Read that again because Docker beginners get attacked by this confusion daily.
 
 ```mermaid
 flowchart LR
-    Dockerfile["Dockerfile<br/>Recipe written by you"] --> Image["Docker Image<br/>Meal kit in the fridge"]
-    Image --> Container["Docker Container<br/>Food is hot and alive"]
+    Dockerfile[Dockerfile: recipe written by you] --> Image[Docker Image: meal kit in the fridge]
+    Image --> Container[Docker Container: food is hot and alive]
 ```
 
 So when you run:
@@ -195,9 +197,9 @@ But the recipe is the same.
 
 ```mermaid
 flowchart TD
-    Image["nginx Image<br/>The blueprint"] --> C1["Container 1<br/>nginx running"]
-    Image --> C2["Container 2<br/>also nginx running"]
-    Image --> C3["Container 3<br/>still nginx, somehow"]
+    Image[nginx Image: the blueprint] --> C1[Container 1: nginx running]
+    Image --> C2[Container 2: also nginx running]
+    Image --> C3[Container 3: still nginx somehow]
 ```
 
 This is powerful because you can scale applications by creating more containers from the same image.
@@ -316,10 +318,10 @@ So if Docker is where we learn to package and run one container, Kubernetes is w
 
 ```mermaid
 flowchart LR
-    Code["Your App Code"] --> Docker["Docker<br/>Package it into an image"]
+    Code[Your App Code] --> Docker[Docker packages it into an image]
     Docker --> Image["Docker Image"]
-    Image --> K8s["Kubernetes<br/>Run and manage containers"]
-    K8s --> Users["Users<br/>Hopefully happy"]
+    Image --> K8s[Kubernetes runs and manages containers]
+    K8s --> Users[Users hopefully happy]
 ```
 
 That is the bridge:
